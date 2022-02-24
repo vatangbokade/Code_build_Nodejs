@@ -44,18 +44,7 @@ pipeline {
     
        }
       
-       # stage('Deploy Staging') {
-       #     steps{
-       #         git branch: 'main', url: 'https://github.com/vatangbokade/Code_build_Nodejs.git'
-       #         step([$class: 'KubernetesEngineBuilder', 
-       #                 projectId: "business-transformers",
-       #                 clusterName: "cluster-suchita-pri-1",
-       #                 zone: "us-central1-a",
-       #                 manifestPattern: 'k8s/',
-       #                 credentialsId: "business-transformers",
-       #                 verifyDeployments: true])
-       #     }
-       # }
+ 
     stage('Wait for SRE Approval') {
          steps{
            timeout(time:12, unit:'HOURS') {
